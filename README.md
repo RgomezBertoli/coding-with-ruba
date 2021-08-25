@@ -1,7 +1,7 @@
-Coding WIth Ruba
+Coding With Ruba
 ================
 
-Bienvenidos a este curso creado por Rubén Gómez (@rgomezbertoli). Este curso está enfocado a personas que no tienen ningún conocimiento acerca del mundo de la programación ni de como es el trabajo día a día de la profesión de informático. 
+Bienvenidos a este curso creado por Rubén Gómez (@rgomezbertoli). Este curso está enfocado a personas que no tienen ningún conocimiento acerca del mundo de la programación ni de como es el trabajo día a día de la profesión de informático.
 
 La idea es que a través de las diferentes secciones se vayan asentando unas bases de programación que poco a poco irás usando a través de pequeños ejercicios. Una vez se tenga una base, nos enfocaremos en prepararte para el desarrollo Front-End aprendiendo cuales son los factores que estan en juego en este tipo de desarrollo y realizando ejercicios usando uno de los frameworks, que a mi parecer, es uno de los más amigables para aprender debido a su sencillez, Vue en la versión 3.
 
