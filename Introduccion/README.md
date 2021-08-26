@@ -4,7 +4,7 @@
   2. ¿Qué puedes hacer una vez sabes programar?
   3. ¿Qué es un lenguaje de programación?
   4. ¿Cómo podemos organizar nuestras lógicas?
-  5. Principios de la programación y buenas práctica
+  5. Principios de la programación y buenas prácticas
 
 ## 1. ¿Qué es la programación?
 
@@ -51,3 +51,7 @@ Y ya, por último, la eliminación de una tarea, para este caso necesitamos al m
 Ya tenemos todas las funciones principales de nuestra aplicación definidas y sabemos lo que un usuario necesita para realizarlas y lo que espera de ellas. Ahora vamos a entrar en el detalle de como podemos implementar una de esas funcionalidades. Para ello vamos a coger la funcionalidad de la priorización, que creo que es la que más caminos lógicos. Imaginemos que la forma que tiene el usuario para priorizar las tareas es usando unas flechas que hay en la pantalla, vamos a analizar que debería pasar si pulsa la flecha que apunta hacia arriba. Para ello vamos a dibujar un pequeño diagrama.
 
 ![Diagrama 1](./assets/diagrama-flujo-flecha-arriba.png)
+
+Este tipo de diagrámas nos va a ser muy útil de aquí en adelante ya que nos permite, de una forma muy sencilla, organizar las lógicas a nivel visual para que sean fácil de seguir.
+
+## 5. Principios de la programación y buenas prácticas
