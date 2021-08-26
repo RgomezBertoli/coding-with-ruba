@@ -55,3 +55,19 @@ Ya tenemos todas las funciones principales de nuestra aplicación definidas y sa
 Este tipo de diagrámas nos va a ser muy útil de aquí en adelante ya que nos permite, de una forma muy sencilla, organizar las lógicas a nivel visual para que sean fácil de seguir.
 
 ## 5. Principios de la programación y buenas prácticas
+
+Hay una serie de principios por los que normalmente nos regimos los programadores a la hora de afrontar una tarea. Son un conjunto de ideas que los repetimos como mantras porque a la hora de la verdad es fácil alejarse de ellos cuando estas en un momento de total frustración. Vamos a empezar con 3 acrónimos:
+
+- KISS (Keep It Simple, Stupid): hace referencia a que cuanto más sencillas hagas las cosas mejor te saldrán y en un futuro cuando tengas que revisitar lo que estas haciendo, siempre te será más fácil entender lo que estabas haciendo y por qué.
+
+- DRY (Don't Repeat Yourself): la idea aquí es que intentes evitar volver a hacer lo que ya has hecho antes. Si en algún momento has hecho algo igual a lo que tienes que hacer actualmente, intenta reutilizarlo y a poder ser, mejorarlo. También se enfoca en que si una operación ves que se repite en varias partes, intentes abstraerla para que solo la definas en un sitio y el resto la usen.
+
+- YAGNI (You Ain't Gonna Need It): bajo está premisa se esconde la reflexión de si realmente es necesario lo que estas haciendo o lo que vas a utilizar, porque, en muchas ocasiones, las cosas que hacemos realmente las hacemos pensando en que en un futuro podrían ser útiles de una forma de la cuál actualmente no sabemos si quiera si eso puede ser verdad. Por ello, es importante siempre centrarte en lo que se te pide y centrarte únicamente en tu objetivo actual.
+
+Bien, ahora que tenemos claros estos tres principios hablemos de otros que también son importantes:
+
+- El Principio del Boy-Scout: cuando hablamos de Boy-Scout en programación hacemos referencia a la idea de que, cada vez que vayas a modificar algo que ya está hecho, intentes dejarlo mejor de lo que estaba. Es decir, si hay una parte de tu app que lleva ya un tiempo y se ha quedado obsoleta, intenta, de forma periódica, volver a ella para actualizarla a la nueva filosofía que tienes en ese momento. Aunque esto parezca extraño de primeras, es muy común en ésta profesión que según se va avanzando en el proyecto, la manera de hacer las cosas vaya cambiando de forma orgánica junto con los requisitos del cliente, por lo que es importante que todo el programa tenga la misma filosofía, para que en un futuro sea más fácil de entender.
+
+- Naming: parece una tontería, pero uno de los trabajos que más cuesta a la hora de programar es elegir un nombre que refleje a la perfección lo que hace esa parte del código. De esta forma intentamos que todo nuestro código sea lo más verboso posible, para que, a la hora de leerlo en un futuro, sea más sencillo de comprender.
+
+Si tenéis interés en saber más sobre estas cosas, os recomiendo leer Clean Code de Robert C. Martin, donde profundiza mucho más sobre estos conceptos.
