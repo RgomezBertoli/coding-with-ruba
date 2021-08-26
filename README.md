@@ -17,7 +17,7 @@ Este curso no está pensado para poder realizarse únicamente con este repositor
   4. ¿Cómo podemos organizar nuestras lógicas?
   5. Principios de la programación y buenas prácticas
 - Principios de los lenguajes
-  1. Tipos y variables
+  1. Tipos, Variables y Sentencias
   2. Operadores
   3. Estructuras de control de flujo
   4. Bucles
