@@ -250,3 +250,19 @@ for(var i=0; i<10; i++){
 ```
 
 ---
+
+### try...catch...finally
+
+El principal uso de esta estructura es el de controlar los errores que puedan surgir en nuestro código y evitar que estos acaben causando una parada en la ejecución de nuestro bloque de código.
+
+```javascript
+try {
+    doSomething();      //Si en la ejecución de doSomething ocurre un error automáticamente
+} catch (error){        //se ejecutará el bloque del catch que recibirá como parámetro
+    console.log(error); //ese error.
+} finally {             //El finally indica un bloque de código que siempre se va a ejecutar
+    clear();            //haya habido un error o no
+}
+```
+
+No es my recomendable el uso de esta estructura porque tiene un gran impacto en términos de rendimiento, por lo que suele encontrarse únicamente en zonas del código muy sensibles a errorres que no pueden ser controlados, fallos en peticiones a servidor debidos a problemas de red, errores causados por problemas con la falta de memoria, etc...
