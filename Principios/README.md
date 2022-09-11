@@ -266,3 +266,37 @@ try {
 ```
 
 No es my recomendable el uso de esta estructura porque tiene un gran impacto en términos de rendimiento, por lo que suele encontrarse únicamente en zonas del código muy sensibles a errorres que no pueden ser controlados, fallos en peticiones a servidor debidos a problemas de red, errores causados por problemas con la falta de memoria, etc...
+
+## 4. Bucles
+
+Este tipo de sentencías es de las más usadas ya que permite recorrer todo tipo de colecciones o arrays. Hay varias formas de crear un bucle pero la idea es la misma. Primero se declara que tipo de operador se usa, se le pone una condición a evaluar en cada ciclo, y en el caso de que no se cumpla la condición se saldrá del bucle y en caso de que se cumpla seguirá ejecutando ciclos. Las condiciones que se ponen en estas sentencias es muy importante porque se podría generar un bucle infinito de forma que tu programa se quedara bloqueado y acabara dando un error fatal. Ahora veremos las diferentes formas:
+
+### for
+
+Esta es sin duda la más usada y la más común ya que su sintaxis es muy sencilla y es muy eficiente. Se escribiría así:
+
+```javascript
+for (let i=0; i< array.lenght; i++){
+    doSomething()
+}
+```
+
+Cómo se ve en el ejemplo, en un __for__ se declaran 3 cosas: la primera es el iterador que se va a usar en el bucle, la segunda es la condición que se debe cumplir para seguir ejecutando ciclos y por último una sentencia que modifica el iterador para ir delimitando los ciclos que quedan por ejecutar.
+
+El __for__ tiene variantes que son útiles en ciertas ocasiones para algunas estructuras de datos, pero ya las veremos cuando conozcamos estas estructuras.
+
+### while y do...while
+
+Estas son otra manera de crear un bucle que son muy parecidas entre sí, pero tienen una pequeña diferencia. En el caso del __while__ el bucle se ejecutará despues de hacer una primera comprobación de si la condición se cumple; sin embargo, el __do...while__ ejecutará siempre el primer ciclo antes de hacer la comprobación. Veamos unos ejemplos:
+
+```javascript
+while (condition) {     // Aquí, antes de ejecutar la función doSomething, se hará la comprobación de si la condición
+    doSomething()       // se cumple, y de ser así, se ejecutará hasta que deje de cumplirse. Sino, no se ejecutará.
+}
+
+do {                    // En este caso la función doSomething2 se ejecutará antes de comprobarse la condición
+    doSomething2()      // Y si la condición se cumple se seguira ejecutando hasta el momento en el que no se cumpla
+} while (condition)     // pero si tras ejecutar la primera vez, ya no se cumple la condición, no se volverá a ejecutar.
+```
+
+Todos los bucles se pueden expresar de una de estas 2 formas, incluso puedes llegar a poder transformar un __for__ en un __while__ y vicecersa si quisieras.
