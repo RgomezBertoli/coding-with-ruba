@@ -22,9 +22,10 @@ Este curso no está pensado para poder realizarse únicamente con este repositor
   3. Estructuras de control de flujo
   4. Bucles
 - Estructuras de datos
-  1. Listas
-  2. Pilas y colas
-  3. Árboles binarios
+  1. Objetos
+  2. Listas
+  3. Pilas y colas
+  4. Árboles binarios
 - Programación Orientada a Objetos
   1. Clases
   2. Constructores
