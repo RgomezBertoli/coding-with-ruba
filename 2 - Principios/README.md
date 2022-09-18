@@ -4,8 +4,9 @@
 2. Operadores
 3. Estructuras de control de flujo
 4. Bucles
-5. Objetos/Diccionarios
-6. Arrays/Colecciones
+5. Funciones
+6. Objetos/Diccionarios
+7. Arrays/Colecciones
 
 Todos los lenguajes de programación de alto nivel se rigen más o menos por las mismas directrices aunque luego cada uno tenga sus propias peculiaridades. En esta sección vamos a intentar recoger aquellas partes que son practicamente comunes a todos y que forman la base de entender cómo funcionan los programas.
 
@@ -303,6 +304,78 @@ do {                    // En este caso la función doSomething2 se ejecutará a
 
 Todos los bucles se pueden expresar de una de estas 2 formas, incluso puedes llegar a poder transformar un __for__ en un __while__ y vicecersa si quisieras.
 
+## Funciones
+
+Uno de vuestros grandes amigos y enemigos a la vez en el mundo de la programación. Las funciones son bloques de código, a las que damos en la mayoría de casos un nombre, que nos permite organizar varias sentencias dentro del mismo bloque semántico que está aislado del resto. Veamos una función sencilla y cuales son los elementos que las definen:
+
+```javascript
+function sum(a, b){
+  return a + b;
+}
+```
+En este caso estamos declarando una función que nos permite sumar 2 elementos. Las funciones pueden recibir parámetros que podemos usar como si fueran una variable mas de la función. Por otro lado, a través de la sentencia __return__ podemos indicar el valor que va a devolver esa función en el momento de que hagamos uso de ella, pero, ¿cómo se usa una función?
+
+```javascript
+const result = sum(10, 2);    // De esta forma estamos llamando a la función y almacenando el valor que devuelve en una variable
+```
+En muchos casos, podemos querer que la función no reciba parámetros o que no devuelva nada, pero deberían de ser casos excepcionales.
+
+---
+### Sentencia Return
+
+Esta, al igual que el __break__ es una sentencia que además de cortar la ejecución de código en el punto en el que esté, ademas nos permite devolver un valor que se quiera dentro de una función. El uso del __return__ fuera de una función puede tener sentido pero no suele ser habitual encontrarlo, ya que haría la misma función que un __break__. Veamos algunos ejemplos útiles del __return__:
+
+```javascript
+function divide(dividend,divider){
+  if(divider === 0) {
+    return Infinity;
+  }
+
+  return dividend / divider;
+}
+
+function getIndexOfElementInArray(arr, value) {
+  for(const index = 0; index < arr.length; index++){
+    if(arr[index] === value) {
+      return index;
+    }
+  }
+
+  return -1;
+}
+```
+En nuestra primera función, hacemos una comprobación de si el divisor es 0 para hacer que devuelva infinito y evitar que haga la operación (En programación, dividir un número entre 0 da error en la mayoría de lenguajes).
+
+En la segunda función, estamos utilizando el __return__ para que en cuanto encuentre el valor buscado, devuelva el indice en el que se encuentra en el array y de esta forma evitar que siga recorriendo todas las posiciones que le falten. Este caso es muy común ya que por ejemplo, si tenemos una colección de 1000 elementos, pero justo el valor que queremos encontrar está en la posición 10, al pasarlo por esta función procesaría únicamente haría 10 ciclos en vez de los 1000 que tiene todo el array.
+
+Y algo muy importante es que si tu pones codigo despues de un __return__, ese código no se ejecutará nunca porque una vez llegue al __return__ dejará de ejecutar ese código.
+
+```javascript
+function example(){
+  const a,b;
+  ...
+  return;     // Cuando no indicamos nada despues del return, por defecto se devolverá undefined
+
+  const result = a + b;   // Esta línea nunca se ejecutará porque se encuentra despues de un return
+}
+```
+---
+
+Hay algo especial en como funcionan los lenguajes de programación que permiten que las funciones puedan usar las variables y las funciones declaradas fuera de ellas siempre que compartan el mismo bloque. Es parecida a una jerarquia unidireccional de padre/hijo, una función declarada en el padre puede usar dentro del hijo pero algo declarado en el hijo no puede ser usado en el padre.
+
+```javascript
+function vader(){
+  var darth = 'Luke, Yo soy tu padre';
+
+  function luke(){
+    var son = 'NOOOOOOOOO!!';
+
+    console.log(darth);       //No da error, mostrará 'Luke, Yo soy tu padre'
+  }
+
+  console.log(son);           //Devolverá un error de variable no definida
+}
+```
 
 ## Objetos/Diccionarios
 
@@ -403,3 +476,47 @@ for(const key in ejemplo) {...}       // key en este caso tendría las keys del 
 
 ### Arrays/Colecciones
 
+Estas estructuras se utilizan principalmente para hacer una agrupación de elementos similares, de ahí su nombre de Colección. En una colección, ya sea de libros, películas u otra cosa, lo que tenemos es una serie de elementos todos del mismo caracter que están organizados en un sitio con cierto orden, que ahí cada uno pues tiene su idea de orden. Pues los arrays son la representación de esa idea en el mundo de la codificación. Si tienes una serie de items que encajan todos dentro de una misma idea o colección, su mejor forma de representarlos será con un array. Veamos algunos ejemplos:
+
+```javascript
+const collection = [10, 23, 50];
+
+const collection2 = new Array(10, 23, 50);
+```
+Estas son dos formas de inicializar un array, y con ambas se obtendría el mismo resultado. Ahora que sabemos como incializarlos, veamos como podemos setear valores y obtenerlos. La idea es muy parecida a la de los objetos si pensamos en los arrays como objetos cuyas claves son índices númericos, por lo que a la hora de setear u obtener el valor de un índice, los mecanísmos serían muy parecidos a los de un objeto:
+
+```javascript
+const collection = [];
+
+collection[0] = "valor1";     // De esta forma estamos indicando que queremos introducir ese valor en el índice 0
+
+console.log(collection[0]);   // Y con esta linea estaríamos imprimiendo ese valor que obtenemos en el índice 0
+```
+Algo muy importante respecto a los arrays y que a veces es confuso; __el primer indice de un array siempre va a ser 0__. Siempre, la primera posición del array se corresponde con el indice 0, y según vamos añadiendo elementos el índice va aumentando. Gracias a esta idea los arrays nos pueden proporcionar cuantos elementos tenemos dentro de nuestra colección.
+
+```javascript
+const collection = [10, 23, 50];  // Esta colección tiene una longitud de 3 elementos
+
+console.log(collection.length);   // Con esta propiedad de los arrays podemos saber cual es la longitud del mismo, en este caso 3
+```
+Esto es de gran ayuda en muchas ocasiones, ya que en gran variedad de momentos vamos a necesitar saber las longitudes de estas colecciones para poder hacer diferentes lógicas, de las cuales la más común es para hacer la condición que tenemos que poner a un __for__ para recorrer todas las posiciones de nuestro array.
+
+```javascript
+const collection = [10, 23, 50];
+
+//  Con este pequeño bucle estaríamos imprimiento todos los valores de nuestra colección
+for (const index = 0; index < collection.length; index++){
+  console.log(collection[index]);
+}
+```
+Hay un problema con este atributo __length__ y es que como se calcula a través del último indice del array, podemos "trucarlo" para que de una longitud erronea:
+
+```javascript
+const collection = [10, 23, 50];
+
+console.log(collection.length);   // Ahora mismo imprimiría 3
+
+collection[32] = 5;
+
+console.log(collection.length)    //Y ahora daría una longitud de 33 porque el último indice que se tiene en el array es 32
+```

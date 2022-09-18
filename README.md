@@ -21,8 +21,9 @@ Este curso no está pensado para poder realizarse únicamente con este repositor
   2. Operadores
   3. Estructuras de control de flujo
   4. Bucles
-  5. Objetos/Diccionarios
-  6. Arrays/Colecciones
+  5. Funciones
+  6. Objetos/Diccionarios
+  7. Arrays/Colecciones
 - Programación Orientada a Objetos
   1. Clases
   2. Constructores
