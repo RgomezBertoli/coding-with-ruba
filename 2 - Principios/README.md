@@ -4,6 +4,8 @@
 2. Operadores
 3. Estructuras de control de flujo
 4. Bucles
+5. Objetos/Diccionarios
+6. Arrays/Colecciones
 
 Todos los lenguajes de programación de alto nivel se rigen más o menos por las mismas directrices aunque luego cada uno tenga sus propias peculiaridades. En esta sección vamos a intentar recoger aquellas partes que son practicamente comunes a todos y que forman la base de entender cómo funcionan los programas.
 
@@ -163,13 +165,13 @@ En el caso del __OR__ es al contrario, si el primer operando se puede transforma
 
 Y, ¿cómo sabemos que valores son true y cuales false? Pues aquí teneís la tabla de verdad que os dirá cuales son:
 
-| false | true |
-| ----- | ---- |
-| "" | Todo lo demás |
-| 0 | |
-| false | |
-| undefined | |
-| null | |
+| false     | true          |
+| --------- | ------------- |
+| ""        | Todo lo demás |
+| 0         |               |
+| false     |               |
+| undefined |               |
+| null      |               |
 
 ## 3. Estructuras de Control de Flujo
 
@@ -300,3 +302,104 @@ do {                    // En este caso la función doSomething2 se ejecutará a
 ```
 
 Todos los bucles se pueden expresar de una de estas 2 formas, incluso puedes llegar a poder transformar un __for__ en un __while__ y vicecersa si quisieras.
+
+
+## Objetos/Diccionarios
+
+### 1 - Declaración y accesos a propiedades
+
+Es la estructura más fácil de entender y la que más se suele utilizar. Un objecto simplemente es un conjunto de claves y valores que están agrupados bajo un mismo ente. En Javascript, todo lo que puedas imaginarte realmente es un objeto por debajo. La forma mas sencilla de declarar un objeto es la siguiente:
+
+```javascript
+const ejemplo = {
+    clave: "valor"
+};
+```
+
+El tamaño de los objetos es variable ya que podemos ir añadiendo más claves y valores según necesitemos, incluso una vez ya estén declarados.
+
+```javascript
+const ejemplo = {};      // Asi declaramos un objeto inicialmente vacio
+
+ejemplo["clave"] = "valor";
+// Con esta línea estaríamos asignando ese valor a esa clave y el resultado sería igual que el ejemplo anterior
+```
+Ha muchas 2 notaciones de acceder a esos valores a través de las claves. Una es la notación __"."__, que te permite acceder conociendo el nombre de la clave, y la otra es la notación __[]__ que te permite pasarle un valor con el cual acceder a esa clave. Veamoslo con ejemplos:
+
+```javascript
+const foo = {
+    bar: "valor",
+};
+
+console.log(foo.bar);
+console.log(foo["bar"]);
+// Ambas lineas imprimirían "valor" en la consola.
+
+console.log(foo.fu);    // Como esta clave no existe en el objeto, se imprimiría "undefined"
+```
+Estas notaciones funcionan tanto a la hora de acceder al valor como cuando queremos asignarle un valor a esa clave:
+
+```javascript
+const foo = {};
+
+foo.bar = "valor";
+foo["fu"] = "valor";
+// Ambas lienas asignarian esos valores a las clavles que hemos declarado
+```
+Los valores que podemos asignar pueden ser de cualquier tipo que nosotros queramos, incluso otro objeto.
+
+```javascript
+const foo = {
+    bar: 1,
+    bar2: "valor",
+    bar3: true,
+    bar4: function () {},
+    bar5: { foo: "ja" },
+    ["bar6"]: 4,          // La notacion [] tambien se puede usar al crear el objeto para darle una clave dinámica
+};
+```
+Hay un caso cuando se intenta acceder o asignar un valor sobre un objeto que no está definido, el error que en otros lenguajes es conocido como NullPointerException.
+
+```javascript
+const foo = {};
+
+foo.bar.foo = "error"
+console.log(foo.bar.fu);
+// Ambas lineas darían un error al ejecutarse ya que la propiedad bar no está definida en el objeto foo
+```
+
+### 2 - Funciones útiles de los objetos y operadores
+
+Cómo esta es una estructura básica de javascript, viene con una serie de funciones que hace que trabajar con ellos sea más sencillo. Las funciones que más usaremos vienen definidas en un objeto base que viene ya incluido en el entorno llamado __Object__. Veamos un par de funciones:
+
+```javascript
+const ejemplo = {
+    foo: "bar",
+    foo2: 3,
+    foo3: true,
+};
+
+const keys = Object.keys(ejemplo);   // Esta función devuelve una colección con las claves del objeto
+
+const values = Object.values(ejemplo);  // En este caso se devuelve una coleccion con los valores
+
+console.log(keys);      // Imprimiría ["foo", "foo2", "foo3"];
+console.log(values);    // Imprimiría ["bar", 3, true];
+```
+
+Además de estas funciones, podemos usar unos operadores de bucle para recorrer estas propiedades en vez de usar las funciones:
+
+```javascript
+const ejemplo = {
+    foo: "bar",
+    foo2: 3,
+    foo3: true,
+};
+
+for(const value of ejemplo) {...}     // Aquí value iria teniendo el valor de cada uno de los valores del objeto
+
+for(const key in ejemplo) {...}       // key en este caso tendría las keys del objeto
+```
+
+### Arrays/Colecciones
+

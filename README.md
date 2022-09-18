@@ -21,11 +21,8 @@ Este curso no está pensado para poder realizarse únicamente con este repositor
   2. Operadores
   3. Estructuras de control de flujo
   4. Bucles
-- Estructuras de datos
-  1. Objetos
-  2. Listas
-  3. Pilas y colas
-  4. Árboles binarios
+  5. Objetos/Diccionarios
+  6. Arrays/Colecciones
 - Programación Orientada a Objetos
   1. Clases
   2. Constructores
@@ -34,6 +31,10 @@ Este curso no está pensado para poder realizarse únicamente con este repositor
   5. Composición
   6. This
   7. Interfaces (Polimorfismo)
+- Estructuras de datos
+  1. Listas
+  2. Pilas y colas
+  3. Árboles binarios
 - Javascript
   1. Tipos básicos
   2. Operadores
