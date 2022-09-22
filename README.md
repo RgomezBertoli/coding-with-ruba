@@ -24,8 +24,8 @@ Este curso no está pensado para poder realizarse únicamente con este repositor
   5. Funciones
   6. Objetos/Diccionarios
   7. Arrays/Colecciones
-- Programación Orientada a Objetos
-  1. Clases
+- Programación Orientada a Objetos (OOP)
+  1. Clases y Objetos
   2. Constructores
   3. Atributos públicos y privados
   4. Herencia
