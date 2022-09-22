@@ -25,13 +25,14 @@ Este curso no está pensado para poder realizarse únicamente con este repositor
   6. Objetos/Diccionarios
   7. Arrays/Colecciones
 - Programación Orientada a Objetos (OOP)
-  1. Clases y Objetos
-  2. Constructores
-  3. Atributos públicos y privados
-  4. Herencia
-  5. Composición
-  6. This
-  7. Interfaces (Polimorfismo)
+  1. Principios Básicos
+  2. Clases y Objetos
+  3. Constructores
+  4. Atributos públicos y privados
+  5. Herencia
+  6. Composición
+  7. This
+  8. Interfaces (Polimorfismo)
 - Estructuras de datos
   1. Listas
   2. Pilas y colas
